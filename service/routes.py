@@ -1,12 +1,10 @@
-
-
 """
 Account Service
 
 This microservice handles the lifecycle of Accounts.
 """
 # pylint: disable=unused-import
-from flask import jsonify, request, make_response
+from flask import jsonify, request
 from service.models import Account
 from service.common import status  # HTTP Status codes
 from . import app  # Import Flask application
@@ -86,5 +84,3 @@ def delete_account(account_id):
     account = Account.query.get_or_404(account_id)
     account.delete()
     return "", status.HTTP_204_NO_CONTENT
-
-
