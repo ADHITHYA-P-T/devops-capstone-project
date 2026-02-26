@@ -1,3 +1,5 @@
+
+
 """
 Account Service
 
@@ -84,4 +86,5 @@ def delete_account(account_id):
     account = Account.query.get_or_404(account_id)
     account.delete()
     return "", status.HTTP_204_NO_CONTENT
+
 
